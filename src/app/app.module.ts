@@ -5,26 +5,35 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { CallQueuePage } from '../pages/call-queue/call-queue';
+import { CallQueueProvider } from '../providers/call-queue/call-queue';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginProvider } from '../providers/login/login';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    LoginPage,
+    CallQueuePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    LoginPage,
+    CallQueuePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CallQueueProvider,
+    LoginProvider
   ]
 })
 export class AppModule {}

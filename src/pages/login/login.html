@@ -1,0 +1,21 @@
+<ion-content padding>
+   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+     <ion-item>
+       <ion-label floating>Username</ion-label>
+       <ion-input name="username" ngModel></ion-input>
+     </ion-item>
+     <ion-item>
+       <ion-label floating>Password</ion-label>
+       <ion-input type="password" name="password" ngModel></ion-input>
+     </ion-item>
+     <br>
+     <ion-item>
+      <ion-label>ช่องบริการ</ion-label>
+      <ion-select name="serviceBox" ngModel interface="popover">
+        <ion-option *ngFor="let serviceBox of serviceBoxs" value="{{ serviceBox.id }}">{{ serviceBox.name }}</ion-option>
+      </ion-select>
+    </ion-item>
+     <br>
+     <button ion-button type="submit" block> Log in </button>
+   </form>
+</ion-content>
