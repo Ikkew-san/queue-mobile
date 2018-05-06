@@ -1,21 +1,43 @@
-<ion-content padding>
+<ion-content class="login-content"padding>
    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-     <ion-item>
-       <ion-label floating>Username</ion-label>
-       <ion-input name="username" ngModel></ion-input>
-     </ion-item>
-     <ion-item>
-       <ion-label floating>Password</ion-label>
-       <ion-input type="password" name="password" ngModel></ion-input>
-     </ion-item>
-     <br>
-     <ion-item>
-      <ion-label>ช่องบริการ</ion-label>
-      <ion-select name="serviceBox" ngModel interface="popover">
-        <ion-option *ngFor="let serviceBox of serviceBoxs" value="{{ serviceBox.id }}">{{ serviceBox.name }}</ion-option>
-      </ion-select>
-    </ion-item>
-     <br>
-     <button ion-button type="submit" block> Log in </button>
-   </form>
+   
+   <ion-row class="logo-row">
+      <ion-col></ion-col>
+      <ion-col width-67>
+        <img src="http://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png"/>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <div class="login-box">
+        <ion-row>
+          <ion-col>
+            <ion-list inset>
+              
+              <ion-item>
+                  <ion-input placeholder="Username" name="username" ngModel></ion-input>
+              </ion-item>
+              
+              <ion-item>
+                  <ion-input placeholder="Password" type="password" name="password" ngModel></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>ช่องบริการ</ion-label>
+                  <ion-select name="serviceBox" ngModel interface="popover">
+                    <ion-option *ngFor="let serviceBox of serviceBoxs" value="{{ serviceBox.id }}">{{ serviceBox.name }}</ion-option>
+                  </ion-select>
+              </ion-item>
+              
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col class="signup-col">
+            <button ion-button class="submit-btn" full type="submit" >Login</button>
+          </ion-col>
+        </ion-row>
+        
+    </div>
+    </form>
 </ion-content>

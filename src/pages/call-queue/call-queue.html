@@ -13,18 +13,53 @@
 </ion-header>
 
 
-<ion-content padding>
-คิวปัจจุบัน : {{queueFormat}}{{currentQueue}}
-เวลาเรียกคิว : {{callTime}}
-คิวในระบบ : {{queueAmount}}
-    <button ion-button (click)="callQueue()" block>
-      <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>&nbsp;เรียกคิวใหม่
-    </button>
-    <button ion-button (click)="repeatQueueCall()" block>
-      <i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;เรียกซํ้า
-    </button>
-    <br>
-    <button ion-button (click)="onLoggedout()" color="danger" block>
-      <ion-icon md="md-log-out"></ion-icon>&nbsp;ออกจากระบบ
-    </button>
+<ion-content class="ion-content" padding>
+ 
+
+
+<ul>
+<ion-grid>
+<ion-row>
+    <ion-col>
+        คิวปัจจุบัน<br><p>{{queueFormat}}{{currentQueue}}</p>
+    </ion-col>
+    <ion-col>
+        เวลาเรียกคิว<br><p>{{callTime}}</p>
+    </ion-col>
+    <ion-col>
+        คิวในระบบ<br><p>{{queueAmount}}</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ul>
+    <ul>
+        
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+                  <li><a href="#" class="round green"(click)="callQueue()"><ion-icon name="call"></ion-icon></a></li>
+                  <ion-label>เรียกคิว</ion-label>
+                  
+              </ion-col>
+              <ion-col>
+                  <li><a href="#" class="round yellow"><ion-icon name="refresh-circle"></ion-icon></a></li>
+                  <ion-label>เรียกซ้ำ</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <!-- 1 of 3 -->
+              </ion-col>
+              <ion-col>
+                  <li><a href="#" class="round red"(click)="onLoggedout()"><ion-icon name="log-out"></ion-icon></a></li>
+                  <ion-label>ออกจากระบบ</ion-label>
+              </ion-col>
+              <ion-col>
+                <!-- 3 of 3 -->
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ul> 
+
+    
 </ion-content>
