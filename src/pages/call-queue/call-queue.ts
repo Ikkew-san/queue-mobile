@@ -54,8 +54,8 @@ export class CallQueuePage {
 
   callQueue() {
     let params = {
-      idServiceBox: 1,
-      idStaff: 4
+      idServiceBox: this.idServiceBox,
+      idStaff: this.idStaff
     }
     this.CallQueueProvider.callQueue(params).subscribe(res => {
       console.log(res)
@@ -66,7 +66,6 @@ export class CallQueuePage {
     this.CallQueueProvider.repeatQueueCall(this.idServiceBox).subscribe(res => {
       console.log(res)
     }, err => console.log(err))
-    // this.getSettings();
   }
 
   onLoggedout() {
